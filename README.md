@@ -207,3 +207,21 @@ A simple linear model
 This model has two model parameters, θ0 and θ1. By tweaking these parameters, you can make your model represent any linear function
 
 ![alt text](https://github.com/manish29071998/Practice-with-Scikit-Learn-and-Tensorflow/blob/master/images/img20.PNG)
+
+
+# Main Challenges of Machine Learning
+In short, since your main task is to select a learning algorithm and train it on some data, the two things that can go wrong are “bad algorithm” and “bad data.” Let’s start with examples of bad data.
+
+# Insufficient Quantity of Training Data 
+For a toddler to learn what an apple is, all it takes is for you to point to an apple and say “apple” (possibly repeating this procedure a few times). Now the child is able to recognize apples in all sorts of colors and shapes. Genius. 
+
+Machine Learning is not quite there yet; it takes a lot of data for most Machine Learning algorithms to work properly. Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples (unless you can reuse parts of an existing model).
+
+# Nonrepresentative Training Data
+In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
+
+For example, the set of countries we used earlier for training the linear model was not perfectly representative; a few countries were missing. Below figure shows what the data looks like when you add the missing countries.
+![alt text]()
+
+If you train a linear model on this data, you get the solid line, while the old model is represented by the dotted line. As you can see, not only does adding a few missing countries significantly alter the model, but it makes it clear that such a simple linear model is probably never going to work well. It seems that very rich countries are not happier than moderately rich countries (in fact they seem unhappier), and conversely some poor countries seem happier than many rich countries. By using a nonrepresentative training set, we trained a model that is unlikely to make accurate predictions, especially for very poor and very rich countries. It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
+
